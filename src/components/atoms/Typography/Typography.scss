@@ -1,0 +1,132 @@
+// @import "styles/variables";
+
+$font-families: poppins;
+$sizes: 0, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 32, 36, 40, 44, 48, 50, 54, 56, 64, 68, 98;
+$colors: (
+  "white": #fff,
+  "black": #000
+);
+$displays: flex, inline, block, inline-block;
+$aligns: left, center, right;
+$weights: 300, 400, 500, 600, 700;
+$line-heights: (
+  "1": 1,
+  "1-25": 1.25,
+  "1-5": 1.5,
+  "12": 12px,
+  "14": 14px,
+  "16": 16px,
+  "20": 20px,
+  "22": 22px,
+  "24": 24px,
+  "28": 28px,
+  "30": 30px,
+  "32": 32px,
+  "36": 36px,
+  "38": 38px,
+  "42": 42px,
+  "44": 44px,
+  "46": 46px,
+  "48": 48px,
+  "54": 54px,
+  "56": 56px,
+  "58": 58px,
+  "60": 60px,
+  "68": 68px,
+  "76": 76px,
+  "80": 80px,
+  "128": 128px,
+);
+$opacities: (
+  "0-5": 0.5,
+  "0-75": 0.75,
+);
+$styles: italic, none;
+$numerics: tabular-nums;
+$overflows: ellipsis;
+
+.Typography_link > a {
+  color: #002BC5;
+  text-decoration: underline;
+}
+
+@mixin text() {
+  @each $font-family in $font-families {
+    .Typography_fontFamily_#{$font-family} {
+      font-family: $font-family;
+    }
+  }
+
+  @each $name, $color in $colors {
+    .Typography_color_#{$name} {
+      color: $color;
+    }
+  }
+
+  @each $name, $opacity in $opacities {
+    .Typography_muted_#{$name} {
+      opacity: $opacity;
+    }
+  }
+
+  @each $style in $styles {
+    .Typography_textStyle_#{$style} {
+      font-style: $style;
+    }
+  }
+}
+
+@mixin text-adaptive($device) {
+  @each $size in $sizes {
+    .Typography_size#{$device}_#{$size} {
+      font-size: #{$size}px;
+    }
+  }
+
+  @each $display in $displays {
+    .Typography_display#{$device}_#{$display} {
+      display: $display;
+    }
+  }
+
+  @each $align in $aligns {
+    .Typography_align#{$device}_#{$align} {
+      text-align: $align;
+    }
+  }
+
+  @each $weight in $weights {
+    .Typography_weight#{$device}_#{$weight} {
+      font-weight: $weight;
+    }
+  }
+
+  @each $name, $line-height in $line-heights {
+    .Typography_lineHeight#{$device}_#{$name} {
+      line-height: $line-height;
+    }
+  }
+
+  @each $numeric in $numerics {
+    .Typography_numeric#{$device}_#{$numeric} {
+      font-variant-numeric: $numeric;
+    }
+  }
+
+  @each $overflow in $overflows {
+    .Typography_overflow#{$device}_#{$overflow} {
+      text-overflow: $overflow;
+      overflow: hidden;
+    }
+  }
+}
+
+@include text;
+
+@media (min-width: 1024px) {
+  @include text-adaptive(Desktop);
+}
+
+@media (max-width: 1023px) {
+  @include text-adaptive(Mobile);
+}

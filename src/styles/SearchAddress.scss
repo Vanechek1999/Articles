@@ -1,0 +1,29 @@
+.SearchAddress {
+  display: flex;
+  height: 100vh;
+}
+
+.SearchAddress-Content {
+  width: 100%;
+}
+
+.SearchAddress-Search {
+  position: relative;
+  width: 100%;
+}
+
+.SearchAddress-WarningMessage {
+  position: absolute;
+  bottom: -24px;
+  color: #ff0000;
+  left: 0;
+}
+
+.SearchAddress-SearchResult {
+  box-shadow: 0px 2px 8px rgba(2, 0, 97, 0.25);
+  border-radius: 10px;
+}
+
+.SearchAddress-SearchResult_text {
+  border-top: 1px solid #D7D7D7;
+}

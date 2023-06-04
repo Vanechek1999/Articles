@@ -1,0 +1,26 @@
+.Width {
+  display: block;
+  max-width: 100%;
+}
+
+.Width_center {
+  margin: auto;
+}
+
+.Width_centerMobile {
+  @media (max-width: 1023px) {
+    margin: auto;
+  }
+}
+
+.Width_right {
+  float: right;
+}
+
+.Width_mobileFullWidth {
+  @media (max-width: 1023px) {
+    html & {
+      width: 100% !important;
+    }
+  }
+}

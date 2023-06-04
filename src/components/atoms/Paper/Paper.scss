@@ -1,0 +1,50 @@
+$sizes: 1, 2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96, 120;
+
+@mixin paper($device) {
+  @each $size in $sizes {
+    .Paper_top#{$device}_#{$size} {
+      padding-top: #{$size}px;
+    }
+
+    .Paper_right#{$device}_#{$size} {
+      padding-right: #{$size}px;
+    }
+
+    .Paper_bottom#{$device}_#{$size} {
+      padding-bottom: #{$size}px;
+    }
+
+    .Paper_left#{$device}_#{$size} {
+      padding-left: #{$size}px;
+    }
+  }
+}
+
+.Paper_flex {
+  display: flex;
+}
+
+.Paper_inlineBlock {
+  display: inline-block;
+}
+
+.Paper_center {
+  justify-content: center;
+  align-items: center;
+}
+
+.Paper_clickThroughPadding {
+  pointer-events: none;
+
+  > * {
+    pointer-events: initial;
+  }
+}
+
+@media (min-width: 1024px) {
+  @include paper(Desktop);
+}
+
+@media (max-width: 1023px) {
+  @include paper(Mobile);
+}

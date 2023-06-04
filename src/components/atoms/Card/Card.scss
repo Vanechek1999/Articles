@@ -1,0 +1,48 @@
+@use "sass:color";
+@import "../../../styles/variables";
+
+.Card {
+  appearance: none;
+  box-sizing: border-box;
+  display: block;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  border-color: $lightblue;
+  border-radius: 6px;
+
+  &::after {
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    content: "";
+  }
+}
+
+.Card_theme_blurEffect {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  background-color: $content-on-color-minor !important;
+  border: 1px solid $white !important;
+  border-radius: 8px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: inherit;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+  }
+}
