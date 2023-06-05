@@ -1,9 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { useStore } from "effector-react";
 
-import { format } from "date-fns";
-import { DayPicker } from "react-day-picker";
-
 import Paper from "../../atoms/Paper/Paper";
 import Input from "../../atoms/Input/Input";
 import Button from "../../atoms/Button/Button";
@@ -26,7 +23,7 @@ const AddOrUpdateArticleForm = ({ id, isUpdate = false}) => {
 
 
   useMemo(() => {
-    console.log(dateValue);
+    console.log(store);
     setNewArticle({
       id: store.articles.length | 0,
       title: titleValue,
@@ -94,6 +91,7 @@ const AddOrUpdateArticleForm = ({ id, isUpdate = false}) => {
                 <label>
                   Дата публикации
                   <Input
+                    type="date"
                     onChange={(e) => setDateValue(e.target.value)}
                   />
                 </label>

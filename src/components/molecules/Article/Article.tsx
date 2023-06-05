@@ -59,9 +59,9 @@ const Article = ({
       content: contentValue,
       author: authorValue,
       date: dateValue,
+      isVisible: true,
     });
     setEditFormVisible(!editFormVisible);
-    console.log(authorValue);
     
   };
 
@@ -75,6 +75,7 @@ const Article = ({
       content: contentValue,
       author: authorValue,
       date: dateValue,
+      isVisible: true,
     });
   };
 
