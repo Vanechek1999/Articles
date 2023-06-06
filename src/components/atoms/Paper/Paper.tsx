@@ -22,6 +22,7 @@ type PaperProps = {
   left?: Padding
   display?: string
   center?: boolean,
+  align?: string,
   onClick?: () => void
 }
 
@@ -35,7 +36,7 @@ const Paper = ({
   bottom,
   left,
   display,
-  center,
+  align,
   ...rest
 }: PaperProps) => {
   const classes = classNames(className, 'Paper', {
@@ -48,7 +49,7 @@ const Paper = ({
     [`Paper_bottomMobile_${bottom?.mobile || bottom?.all}`]: bottom?.mobile || bottom?.all,
     [`Paper_leftMobile_${left?.mobile || left?.all}`]: left?.mobile || left?.all,
     [`Paper_${display}`]: display,
-    'Paper_center': center,
+    [`Paper_${align}`]: align,
   })
 
   return createElement(

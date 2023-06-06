@@ -33,6 +33,14 @@ $sizes: 1, 2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96, 120;
   align-items: center;
 }
 
+.Paper_left {
+  text-align: left;
+}
+
+.Paper_right {
+  text-align: right;
+}
+
 .Paper_clickThroughPadding {
   pointer-events: none;
 

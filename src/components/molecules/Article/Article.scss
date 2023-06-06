@@ -1,0 +1,49 @@
+@use "sass:color";
+@import "../../../styles/variables";
+
+.Article-EditForm {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: $content-on-color-muted;
+}
+
+.Article-Edit {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Article-EditCloseLogo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.Article-Buttons {
+  justify-content: end;
+}
+
+.Article-Comments {
+  display: flex;
+  align-items: center;
+
+  svg {
+    transition: transform .2s ease-in-out;
+  }
+}
+
+.Article-Comments_active {
+  svg {
+    transform: rotate(180deg);
+    transition: transform .2s ease-in-out;
+  }
+}
+
+.Article-Comment {
+  border-bottom: 1px solid $blue;
+  overflow-wrap: break-word;
+}

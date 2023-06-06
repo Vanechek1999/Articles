@@ -1,7 +1,15 @@
 @use "sass:color";
 @import "../../../styles/variables";
 
-.AddOrUpdateArticleForm {
+.AddArticle-Button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.AddArticleForm {
   position: absolute;
   z-index: 10;
   width: 100%;
@@ -11,8 +19,14 @@
   background: $background-overlay;
 }
 
-.AddOrUpdateArticleForm-Card {
+.AddArticleForm-Card {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.AddArticle-CloseLogo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }

@@ -1,0 +1,10 @@
+@use "sass:color";
+@import "../styles/variables";
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: $background-default;
+  max-width: 100vw;
+  overflow-x: hidden;
+}

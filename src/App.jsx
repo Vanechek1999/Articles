@@ -2,13 +2,11 @@ import { useEffect } from "react";
 import { useStore } from "effector-react";
 
 import ArticleList from "./components/molecules/ArticleList/ArticleList";
-import AddOrUpdateArticleForm from "./components/molecules/AddOrUpdateArticleForm/AddOrUpdateArticleForm";
-import Button from "./components/atoms/Button/Button";
+import AddArticleForm from "./components/molecules/AddArticleForm/AddArticleForm";
 import Width from "./components/atoms/Width/Width";
 
-import useArticleShowModal from "./hooks/useArticleShowModal";
-
-import "./App.css";
+import "./styles/App.scss";
+import './styles/global.scss'
 
 import $store, { addArticle, setNewArticle } from "./store/store";
 
@@ -66,7 +64,7 @@ const App = () => {
       <Width size={45} align="center">
         <ArticleList data={store.articles} />
       </Width>
-      <AddOrUpdateArticleForm />
+      <AddArticleForm />
     </div>
   );
 };

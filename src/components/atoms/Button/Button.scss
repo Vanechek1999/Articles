@@ -13,6 +13,18 @@
   border-radius: 10px;
 }
 
+.Button_display_block {
+  display: block;
+}
+
+.Button_align_center {
+  margin: 0 auto;
+}
+
+.Button_fullWidth {
+  width: 100%;
+}
+
 .Button_color_white {
   color: #fff;
 }
@@ -27,4 +39,24 @@
 
 .Button_backGround_red {
   background: $red;
+}
+
+.Button_backGround_orange {
+  background: $orange;
+}
+
+.Button_backGround_violet {
+  background: $violet;
+}
+
+.Button_borderColor_blue {
+  border: 1px solid $blue
+}
+
+.Button_borderColor_red {
+  border: 1px solid $red
+}
+
+.Button_borderColor_green {
+  border: 1px solid $green;
 }

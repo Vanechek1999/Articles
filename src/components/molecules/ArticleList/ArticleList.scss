@@ -1,20 +1,92 @@
+@use "sass:color";
+@import "../../../styles/variables";
+
+.Article-FiltersModal {
+  background: $white;
+  border-radius: 10px;
+}
+
+.ArticleList-Filters {
+  justify-content: space-between;
+
+  @media (max-width: 1023px) {
+    flex-wrap: wrap;
+  }
+}
+
+.ArticleList-Filter {
+  position: relative;
+}
+
+.ArticleList-FilterList {
+  position: absolute;
+  opacity: 0;
+  transition: .4s ease-in-out;
+  z-index: 20;
+  background: #fff;
+  max-height: 0;
+  overflow-y: scroll;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  &::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+}
+
+.ArticleList-FilterList_active {
+  max-height: 250px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: .4s ease-in-out
+}
+
+.ArticleList-FilterShowList {
+  transition: .2s ease-in-out;
+}
+
+.ArticleList-FilterShowList_active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  transition: .2s ease-in-out;
+}
+
 .ArticleList-FilterList > li{
-  border-top:  solid #FF836D;
-  border-left-style: none;
-  border-bottom: none;
+  border-top: 1px solid $primary-action;
+  width: 100%;
   display: inline-block;
   padding-top: 1em;
   padding-bottom: 1em;
-  // width: 100%;
   transition: background-color 0.6s ease;
   cursor: pointer;
 
   &:hover {
     transition: background-color 0.6s ease;
-    background: #D9391C;
+    background: $primary-surface-45;
   }
 }
 
 .ArticleList-Item_hide {
   display: none;
+}
+
+.ArticleFilter-Item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  svg {
+    flex-shrink: 0;
+    transition: transform .2s ease-in-out;
+  }
+}
+
+.ArticleFilter-Item_active {
+  svg {
+    flex-shrink: 0;
+    transform: rotate(180deg);
+    transition: transform .2s ease-in-out;
+  }
 }
